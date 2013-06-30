@@ -52,6 +52,7 @@
             <li><a href="#seqview">Sequence view</a></li>
             <li><a href="#seqview">Tree view</a></li>
             <li><a href="#domainView">Domain view</a></li>
+            <li><a href="#domainTreeView">Domain tree view</a></li>
         </ul>
         <li><a href="#tools">Tools</a></li>
         <ul>
@@ -699,7 +700,7 @@ ISLVAKFSCIDSPPPSPGCSCNSGYLRLNLTSPCIPICDCPQMQHSPDCQ
             The proper construction of a phylogenetic tree is a complex endeavor, and is best done with dedicated
             software such as <a href="https://github.com/stamatak/standard-RAxML">RaxML</a> or
             <a href="http://www.microbesonline.org/fasttree/">FastTree</a>. That said, DoMosacis is able to perform a simple tree construction
-            by using the PAL java libary for phylogenetic analysis.
+            by using the PAL java library for phylogenetic analysis.
             In the first step, the sequences are aligned used EBIs interface to ClustalW. The resulting alignment is
             then used to construct a tree.
         </p>
@@ -996,11 +997,9 @@ ISLVAKFSCIDSPPPSPGCSCNSGYLRLNLTSPCIPICDCPQMQHSPDCQ
         <br />
         <br />
         <h4>Domain-tree view</h4>
-        <a name="seqview"></a>
-        <p>The sequence view is the simplest of all views.
-            Sequence views provide means for the user to maintain the association between a set of sequences and corresponding domain
-            annotation or trees. Furthermore, sequence views can be selected wherever sequences are needed (e.g. for domain annotation). They can also
-            be created from other views, for example through the use of the 'Select sequence' functionality in the Domain-view (see below).</p>
+        <a name="domainTreeView"></a>
+        <p>A domain tree view is a combination between a tree view and a domain view. The view panel menu and context menus
+        are mixed, and allow access to the view specific-functionality from both the domain and the tree view.</p>
         <br />
         <br />
     </div>
