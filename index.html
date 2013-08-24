@@ -7,38 +7,50 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
-<a name="top"></a>
+
 <div class="container">
+<ul class="breadcrumb">
+   <li><a href="/">Home</a> <span class="divider">/</span></li>
+   <li class="active">Documentation <span class="divider">/</span></li>
+   <li><a href="quickstart.html">Quickstart guide</a>
+</ul>
+
     <h1>DoMosaics</h1>
+    <a name="top"></a>
     <p class="lead">Help</p>
     <hr>
 
     <!-- TOC -->
     <ol>
         <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation">Installation</a>
         <ul>
             <li><a href="#prereq">Prerequisites</a></li>
             <li><a href="#useJar">Using the jar file</a></li>
         </ul>
-        <li><a href="#gettingStarted">Getting started</a></li>
+        </li>
+        <li><a href="#gettingStarted">Getting started</a>
         <ul>
+            <li><a href="quickstart.html">Quickstart guide</a></li>
             <li><a href="#wdir">Working directory</a></li>
             <li><a href="#exampleDatasets">Example datasets</a></li>
             <li><a href='#settings'>Settings</a></li>
         </ul>
-        <li><a href='#loadData'>Loading data</a></li>
+        </li>
+        <li><a href='#loadData'>Loading data</a>
         <ul>
             <li><a href="#sequenceData">Sequence data</a></li>
             <li><a href="#domainData">Domain data</a></li>
             <li><a href="#treeData">Tree data</a></li>
         </ul>
-        <li><a href="#domainAnnotation">Domain annotation</a></li>
+        </li>
+        <li><a href="#domainAnnotation">Domain annotation</a>
         <ul>
             <li><a href="#interpro">InterPro</a></li>
             <li><a href="#hmmer">HMMER</a></li>
         </ul>
-        <li><a href="#actions">Actions</a></li>
+        </li>
+        <li><a href="#actions">Actions</a>
         <ul>
             <li><a href="#interproscan">Annotate domains with InterProScan</a></li>
             <li><a href="#hmmscan">Annotate domains using HMMSCAN</a></li>
@@ -46,20 +58,23 @@
             <li><a href="#tree">Create a tree based on sequences</a></li>
             <li><a href="#domainTree">Create a tree based on domains</a></li>
         </ul>
-        <li><a href="#views">Views</a></li>
+        </li>
+        <li><a href="#views">Views</a>
         <ul>
             <li><a href="#seqview">Sequence view</a></li>
             <li><a href="#seqview">Tree view</a></li>
             <li><a href="#domainView">Domain view</a></li>
             <li><a href="#domainTreeView">Domain tree view</a></li>
         </ul>
-        <li><a href="#tools">Tools</a></li>
+        </li>
+        <li><a href="#tools">Tools</a>
         <ul>
             <li><a href="#distances">Distance matrix</a></li>
             <li><a href="#domainGraph">Domain graph</a></li>
             <li><a href="#domainDotplot">Domain dotplot</a></li>
             <li><a href="#evalueRes">E-value resolver</a></li>
         </ul>
+        </li>
     </ol>
     <br><br><br>
 
@@ -176,16 +191,16 @@
         <hr>
         <h4>Working Directory</h4>
         <a name="wdir"></a>
-            When DoMosaics starts, you will be required to select a working directory. The workspace
-            (which includes all project data) will be saved in this directory.
-            By default, the working directory will be under ${user_home}/domosaics-workspace. The main window consists of:
-            <p>
-            <ul>
-                <li>the main menu and button bar on the top,</li>
-                <li>the workspace with all projects on the left,</li>
-                <li>and the main view on the right.</li>
-            </ul>
-            </p>
+        <p>
+        When DoMosaics starts, you will be required to select a working directory. The workspace
+        (which includes all project data) will be saved in this directory.
+        By default, the working directory will be under ${user_home}/domosaics-workspace. The main window consists of:
+        </p>
+        <ul>
+            <li>the main menu and button bar on the top,</li>
+            <li>the workspace with all projects on the left,</li>
+            <li>and the main view on the right.</li>
+        </ul>
         <br>
 
         <a name="exampleDatasets"></a>
@@ -194,8 +209,8 @@
             <div class='span8'>
                 To make it easier to get started, DoMosaics comes with an example dataset.
                 Open the example dataset by selecting "Help" from the main menu, and then choosing
-                "Load example project". For a walk through the small example dataset, have a look at the
-                <a href="#exampleProject">example project</a> section. Once you have familiarized yourself
+                "Load example project". For a walk through the small example dataset, have a look at the online
+                <a href="http://domosaics.net/docs/quickstart.html">quickstart document</a>. Once you have familiarized yourself
                 with the basics of the interface, find out more about how to load
                 your own data set under the <a href="#loadData">load data</a> section.
             </div>
@@ -277,23 +292,20 @@
         <h3>4. Loading Data</h3>
         <a name="loadData"></a>
         <hr>
-        There are three data types used within DoMosaics:
-        <p>
-            <ol>
-                <li>Trees</li>
-                <li>Sequences</li>
-                <li>Domains (arrangements)</li>
-            </ol>
-        </p>
+        <p>There are three data types used within DoMosaics:</p>
+        <ol>
+            <li>Trees</li>
+            <li>Sequences</li>
+            <li>Domains (arrangements)</li>
+        </ol>
+        <p> These three types are separately loaded into a project (via File, Manage Projects). DoMosaics supports the following file formats:</p>
 
-        These three types are separately loaded into a project (via File, Manage Projects). DoMosaics supports the following file formats:
-        <p>
         <ol>
             <li><a href="http://en.wikipedia.org/wiki/Newick_format">Newick</a> for trees</li>
             <li><a href="http://en.wikipedia.org/wiki/Fasta_format">Fasta</a> for sequences</li>
-            <li><a href="#xdom">xdom</a>, <a href="#hmmscan">hmmscan</a> or <a href="#pfamscan">pfamscan</a> for domain annotation data</li>
+            <li><a href="#xdom">xdom</a> or <a href="#hmmscan">hmmscan</a> for domain annotation data</li>
         </ol>
-        </p>
+
 
         <div class='row'>
             <div class='span8'>
@@ -302,7 +314,7 @@
                 Trees are best created (from the same fasta file in which domains were annotated) using a
                 proper tree creation program (such as <a href="https://github.com/stamatak/standard-RAxML">RaxML</a>,
                 <a href="http://www.microbesonline.org/fasttree/">FastTree</a> or  <a href="http://www.atgc-montpellier.fr/phyml/">PhyML</a>),
-                however DoMosaics can create trees from input sequences (see section <a href="#trees">trees</a>) to get started.
+                however DoMosaics can create trees from input sequences (see section <a href="#treeData">trees</a>) to get started.
             </div>
             <div class="span4">
                 <div class="alert">
@@ -352,6 +364,7 @@ ISLVAKFSCIDSPPPSPGCSCNSGYLRLNLTSPCIPICDCPQMQHSPDCQ
             </div>
         </div>
 
+        <a name="xdom"></a>
         <b>1. </b>XDOM-format<br>
         We recommend using the xdom format. It is the generic IO format which is an easy to
         read, fasta-like representation of a protein with its constituent domains. For example,
@@ -509,12 +522,13 @@ ISLVAKFSCIDSPPPSPGCSCNSGYLRLNLTSPCIPICDCPQMQHSPDCQ
         <hr>
         <a name="hmmscan"></a>
         <p>
-            Hmmscan is a program from the HMMER package. It is used to search protein sequences
-            against a database of hidden Markov models (HMM) profiles, such as those created stored in
-            <a href="http://pfam.sanger.ac.uk">Pfam</a>. HMMSCAN is used to detect the presence of domains in proteins.
+        Hmmscan is a program from the HMMER package. It is used to search protein sequences
+        against a database of hidden Markov models (HMM) profiles, such as those created stored in
+        <a href="http://pfam.sanger.ac.uk">Pfam</a>. HMMSCAN is used to detect the presence of domains in proteins.
+        </p>
         <p class="label label-important">Note</p> you can set default values for the binaries and profiles
         in the settings, found under Main menu, File, Settings.
-        </p>
+
         <div class='row'>
             <div class='span6'>
                 To run HMMSCAN locally, you will need the following:
@@ -598,11 +612,13 @@ ISLVAKFSCIDSPPPSPGCSCNSGYLRLNLTSPCIPICDCPQMQHSPDCQ
         Hmmscan returns a list of all domain occurrences detected in a protein, which might contain <b>overlaps</b>.
         This frequently occurs with homolog domain families (specialization of an ancestral domain).
         DoMosaics has different methods for dealing with overlaps:
+        </p>
         <ul>
             <li>it can keep overlapping domains, which can be resolved later by manually curation</li>
             <li>it can resolve overlaps based on "E-value" which is the standard approach used in Pfam or InterPro</li>
             <li>it can remove overlapping domains according to a "maximum-coverage" approach</li>
         </ul>
+        <p>
         The latter puts larger emphasis on reducing the number of unassigned residues rather than accounting for
         statistical significance; this is generally not advisable.
        </p>
@@ -960,39 +976,40 @@ ISLVAKFSCIDSPPPSPGCSCNSGYLRLNLTSPCIPICDCPQMQHSPDCQ
             </dd>
         </dl>
         <p>
-            Beyond the main menu, a number of operations are triggered in context, that is, by right-clicking on an
-            arrangement (that is <em>between</em> domains of an arrangement) or <em>within</em> domains of an arrangement.
-            The former provides the context menu of the arrangement, while the latter provides the context menu of the selected
-            domain.
-            <section id='screenshots'>
-                <ul class="thumbnails">
-                    <li class="span6">
-                        <div class='thumbnail'>
-                            <img src="img/arrangement_context.png" alt=""></a>
-                            <div class='caption'>
-                                <h5>Arrangement context menu </h5>
-                                <p>
-                                    Menu can be reached by right-click on a <em>non-</em>domain position in an arrangement.
-                                    As their are no non-domain positions displayed when arrangement are represented
-                                    as same-sized boxes (unproportional), this menu is only available in the
-                                    proportional arrangement visualization.
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="span6">
-                        <div class='thumbnail'>
-                            <img src="img/domain_context.png" alt=""></a>
-                            <div class='caption'>
-                                <h5>Domain context menu</h5>
-                                <p>Menu can be reached from any domain-displaying view by through right-click
-                                on a domain.</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+        Beyond the main menu, a number of operations are triggered in context, that is, by right-clicking on an
+        arrangement (that is <em>between</em> domains of an arrangement) or <em>within</em> domains of an arrangement.
+        The former provides the context menu of the arrangement, while the latter provides the context menu of the selected
+        domain.
         </p>
+        <section id='screenshots'>
+            <ul class="thumbnails">
+                <li class="span6">
+                    <div class='thumbnail'>
+                        <img src="img/arrangement_context.png" alt="">
+                        <div class='caption'>
+                            <h5>Arrangement context menu </h5>
+                            <p>
+                                Menu can be reached by right-click on a <em>non-</em>domain position in an arrangement.
+                                As their are no non-domain positions displayed when arrangement are represented
+                                as same-sized boxes (unproportional), this menu is only available in the
+                                proportional arrangement visualization.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="span6">
+                    <div class='thumbnail'>
+                        <img src="img/domain_context.png" alt="">
+                        <div class='caption'>
+                            <h5>Domain context menu</h5>
+                            <p>Menu can be reached from any domain-displaying view by through right-click
+                            on a domain.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
         <br />
         <br />
         <h4>Domain-tree view</h4>

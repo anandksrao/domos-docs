@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>DoMosaics Quickstart</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<ul class="breadcrumb">
+    <li><a href="/">Home</a> <span class="divider">/</span></li>
+    <li><a href="index.html">Documentation</a> <span class="divider">/</span></li>
+    <li class="active">Quickstart guide</li>
+</ul>
+<h1>DoMosaics</h1>
+<a name="top"></a>
+<p class="lead">Quickstart guide</p>
+<br />
+<div class="alert alert-success">
+    This document is meant as an entry point for new users. We provide an example dataset in the program
+    (which is available under the main menu -> "Help" -> "Load example dataset"). For more detailed
+    information consult the <a href="index.html">main documentation</a>.
+
+</div>
+
+<h5>1 - Import new data</h5>
+<hr />
+<p>
+    First, create a new project by following the steps illustrated in figure 1.
+    In DoMosaics, data files are uniquely associated with a project. There are three types of data
+    (sequence data, domain data, phylogenetic (tree) data). Each of these three data types
+    can be loaded into the program separately.
+    A typical analysis starts with a set of amino acid sequences in fasta format.
+    To load a fasta file, follow the path illustrated in figures 1 and 2 below.
+    Once the file is loaded, the view will be selected and displayed.
+</p>
+
+<div class="row">
+    <div class="span6">
+        <div class='thumbnail'>
+            <a href="img/qs/fig1.png"><img src="img/qs/fig1.png" alt=""></a>
+            <div class='caption'>
+                <h5>Figure 1: Create a new project</h5>
+                Click on button 1. In dialog (2), choose an existing
+                project or create a new one (3). In the appearing dialog (4),
+                enter a name (5) and press finish. Select this newly created project
+                (new folder in dialog 2). Then, click 'Next'.
+            </div>
+        </div>
+    </div>
+
+    <div class="span6">
+        <div class='thumbnail'>
+            <a href="img/qs/fig2.png"><img src="img/qs/fig2.png" alt=""></a>
+            <div class='caption'>
+                <h5>Figure 2: Add sequence data to new project</h5>
+                Choose 'Sequence' from the three possible data types (1). Click
+                'Next'. In the Open File dialog of the wizard (2), click on
+                'Browse', and choose your fasta (4). Finally, click on 'Open'
+                to select the file. Finally, select finish, give the view a name
+                and press finish.
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+<h5>2 - Sequence view</h5>
+<hr />
+<p>
+    You can also add a sequences to an <em>existing</em> project. Once the file is loaded,
+    you will see a sequence view. <b>Note:</b> sequence views provide a way for you to keep associated data
+    together, and serve as an entry point for running annotation or doing dotplots.
+    They do not provide any context action.
+</p>
+
+<div class='thumbnail'>
+    <img src="img/qs/fig3.png">
+    <div class='caption'>
+        <h5>Figure 3</h5>
+        Sequences can also be loaded into a project using the shortcut (see notice
+        on the button bar icons above).
+        Click on the icon at position 3 (a large F) opens a dialog which requires
+        project selection (i.e. the project must exist) and a view name. Note that the
+        view name has to be unique as (3).
+    </div>
+</div>
+<br />
+<br />
+
+<h5>3 - Domain annotation</h5>
+<hr />
+<p>
+    Once we have the sequence view, we can annotate domains. Using the Shortcut
+    in the button bar, we can launch a local hmmscan job (see Figure 4).
+    In order to run hmmscan, we have to download the appropriate
+    binaries from <a href="http://hmmer.janelia.org/">here</a>. Next, extract the zip or gzip and remember the location
+    of the folder. Provide DoMosaics with the hmmscan binary (found in the binaries folder of
+    the downloaded, extracted hmmer folder) and the hmmpress binary (Figure 4:2). Then we have to provide
+    the model files in appropriate format (Figure 4:2). In this example, we used Pfam models (which can be downloaded
+    from <a href="ftp://ftp.sanger.ac.uk/pub/databases/Pfam/current_release">the Pfam FTP site</a>. Choose the Pfam-A.hmm file.
+    We can provide extra parameters to the scan (Figure 4:3) - see the main documentation for more information
+    on running context-dependant annotation. Finally, we can start the scan.
+</p>
+<br />
+<div class='thumbnail'>
+    <img src="img/qs/fig4.png">
+    <div class='caption'>
+        <h5>Figure 4</h5>
+        Download and extract the HMMER 3.0 suite; hmmscan and
+        hmmpress binaries can be found in the subdirectory
+        'binaries'. In DoMosaics, add the hmmscan (HMMER3 scan bin), the hmmpress
+        (HMMER3 press bin) and provide a HMM library. Finally, choose
+        a sequence view or a fasta file and start the job.
+    </div>
+</div>
+<br />
+<p>
+    Alternatively, we can run InterProScan by pressing the IPR icon in the button bar (Figure 5:1)
+    or by choosing 'Actions' -> 'Domain View' -> 'InterProScan'.
+    In this dialog (see Figure 5), we will select the created sequence view (Figure 5:2) 'sequence data'. Note that
+    we could also choose a fasta file from our local filesystem. Next,
+    in order to use <abbr title="European Bioinformatics Institute">EBI</abbr> webservices,
+    we have to enter a valid email (Figure 5:2). We can then choose the scan method from the drop-down
+    menu (Figure 5:3)- in this example, we will scan search against Pfam-defined models (hmmpfam).
+    We are now ready to start the annotation process; click 'Submit Job' (Figure 5:3). The console will
+    display information while the scan is underway.
+</p>
+<br />
+<div class='thumbnail'>
+    <img src="img/qs/fig5.png">
+    <div class='caption'>
+        <h5>Figure 5</h5>
+        InterProScan annotation requires internet and offers a choice of several domain databases.
+        However, scan parameters cannot be adjusted.
+    </div>
+</div>
+<br />
+<p>
+    Once we have created a domain view (which might correspond to a protein family of interest)
+    we can find similar arrangements using <a href="http://rads.uni-muenster.de">RADS</a> (Rapid Alignment using Domain Strings) - see
+    the <a href="index.html">main documentation</a> for more information on RADS. To run a RADS scan,
+    choose the RADS icon in the button bar (Figure 6a:1). Run with default parameters
+    by clicking on 'Submit job' (6a:2). Once the scan is complete, select from the result lists
+    by clicking on import selection (which requires at least one selected arrangement from the
+    results table). A RADS scan can also be started through a right-click on an arrangement
+    which is to be used as a query (<b>not</b> on a domain). Select 'RadScan this arrangement'
+    (Figure 6b). When opening RADS from the context of an arrangement, the arrangement is displayed at the
+    top of the panel, and the data selection controls are disabled.
+    <b>Note</b> that RADS takes <em>one</em> data set (sequence or
+    arrangement data) - providing a view with multiple arrangements will result in RADS selecting one
+    only. If a sequence is provided, RADS will first annotate the arrangement of the query, and then
+    perform the search.
+</p>
+<div class="alert alert-warning">
+    <b>Rule of thumb</b>, use the context menu to call RADS when you have a domain view with different
+    multi-domain proteins. Use the main menu, when you have a file or a view with one, or multiple,
+    identical arrangements (e.g. members of a domain family with identical arrangements).
+</div>
+<p>
+
+    (Fig6: click on 1 open frame 2 and after submitting, the "show result" button enable to open
+    a frame 3 to select which sequences to integrate into a new domain view).
+</p>
+<div class="row">
+    <div class="span6">
+        <div class='thumbnail'>
+            <a href="img/qs/fig6a.png"><img src="img/qs/fig6a.png" alt=""></a>
+            <div class='caption'>
+                <h5>Figure 6a</h5>
+                RADS/RAMPAGE domain-based alignments for homology search against UniProt proteins.
+                Once the scan is complete, results can be selectively imported.
+                We can see the raw scan log by pressing 'Show scan log' (2). We can browse
+                the RADS results online by pressing 'Browse online' (3). Select the results
+                of interest (or 'Select all') and 'Import selection'.
+            </div>
+        </div>
+    </div>
+
+    <div class="span6">
+        <div class='thumbnail'>
+            <a href="img/qs/fig6b.png"><img src="img/qs/fig6b.png" alt=""></a>
+            <div class='caption'>
+                <h5>Figure 6b</h5>
+                The RadScan panel was opened from an arrangement,
+                we cannot select a sequence view or a fasta file. If the arrangement
+                is associated with sequences we can choose RADS or RADS/RAMPAGE.
+                For more information on RADS, consult the main documentation.
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+<h5>4 - Arrangement views</h5>
+<hr />
+<p>
+    Once the search is complete (be it HMMER, InterProScan or RADS) and a view name has been entered/a project
+    selected, we will see a new domain view. To find out more about a given domain, hover over it with the mouse.
+    A tool tip will display positional information, Evalue, source DB as well as GO annotation if available.
+    Right-click on a domain to open the context menu. Here, you can change visual parameters (shape / color)
+    for all domains of this type in the current project, hide the domain, apply domain sequence comparison, etc
+    (Figure 7). When manually aligning domains, consider using the function 'Domain sequence comparison'
+    to determine to which column a given domain should be added.
+</p>
+<div class="alert alert-warning">
+    <b>Note</b> that domain views which are associated with sequences carry a small 's' in their icon.
+    Some tools or context operations require the presence of sequences, such as dotplots
+    or domain sequence comparison.
+</div>
+<br />
+<div class='thumbnail'>
+    <img src="img/qs/fig7.png">
+    <div class='caption'>
+        <h5>Figure 7</h5>
+    </div>
+</div>
+<br />
+<p>
+    Domains can be represented by various shapes, colors, un-proportional and/or aligned.
+    All these actions are triggered from the domain view menu.
+    A right-click on a protein opens a context menu which provides access to various operations
+    (e.g. edit arrangement, open fasta etc).
+</p>
+<div class='thumbnail'>
+    <img src="img/qs/fig8.png">
+    <div class='caption'>
+        <h5>Figure 8</h5>
+    </div>
+</div>
+<br />
+<br />
+
+<h5>5 - Arrangement tools</h5>
+<hr />
+<p>
+    The tool item in the domain view menu offers a variety of analysis tools such as the
+    domain graph, the domain dotplot or a tool which allows you to play with e-value thresholds,
+    domain overlaps and co-occurring domains. For more information on these tools, visit the main documentation
+    (section <a href="index.html#tools">tools</a>).
+</p>
+<div class='thumbnail'>
+    <img src="img/qs/fig9.png">
+    <div class='caption'>
+        <h5>Figure 9</h5>
+    </div>
+</div>
+<br />
+<br />
+
+<h5>6 - Build or load trees</h5>
+<hr />
+<p>
+    As mentioned above, the third data type (and view type) is the tree view.
+    A tree view can be created based on views, or based on an external file which is imported
+    into DoMosaics. DoMosaics can create trees based on sequence (by either using a sequence view, or
+    the sequences which underlie a domain view), or based on the distance between arrangements (see Figure 10).
+    The latter case constructs a distance matrix based on the Jaccard index or the domain edit
+    distance (which is in essence equivalent to the Levenshtein distance). The sequence-based tree construction
+    requires an internet connection (as it aligns the sequences remotely using an EBI service for ClustalW).
+    For more information visit the main documentation.
+</p>
+<div class="alert alert-warning">
+    We strongly recommend you use a dedicated program to create a tree (e.g. PhyML, RaxML etc) and
+    load the resulting Newick tree into DoMosaics.
+</div>
+<div class='thumbnail'>
+    <img src="img/qs/fig10.png">
+    <div class='caption'>
+        <h5>Figure 10</h5>
+
+        Create a tree by clicking on the single-colored tree in the button bar (1).
+        In the dialog (2), you can create a tree using either domains (3) or sequences (4).
+        The latter requires an internet connection and uses a ClustalW webservice for alignment (5).
+    </div>
+</div>
+<br />
+<br />
+
+<h5>7 - Tree view</h5>
+<hr />
+<p>
+    Once a tree is created, you can manipulate it in the tree view using contextual menus which
+    are available on a right-click on parts of the tree. Note that nodes have context menu.
+    A number of general settings (such as used fonts, displayed values, etc) are available through
+    the main tree view menu (under view, see figure 11).
+</p>
+<div class='thumbnail'>
+    <img src="img/qs/fig11.png">
+    <div class='caption'>
+        <h5>Figure 11</h5>
+        Display of bootstrap values, context menu (color and label customisation) and with scaling.
+    </div>
+</div>
+<br />
+<br />
+
+<h5>8 - Domain-Tree view</h5>
+<hr />
+<p>
+    The domain-tree view is a composite view which is created by merging a tree view and a corresponding
+    domain view. While a domain-tree view is a separate view type, its contextual menus which are specific
+    to one of the two views continue to work, and the main menu is sub-sectioned to include both menus.
+    A number of operations are specific to this view type, such as the operation for computing
+    possible insertions and deletions for domains in the view (available under "View", "Show Insertions/Deletions").
+</p>
+<div class="row">
+    <div class="span6">
+        <div class='thumbnail'>
+            <a href="img/qs/fig12.png"><img src="img/qs/fig12.png" alt=""></a>
+            <div class='caption'>
+                <h5>Figure 12</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="span6">
+        <div class='thumbnail'>
+            <a href="img/qs/fig13.png"><img src="img/qs/fig13.png" alt=""></a>
+            <div class='caption'>
+                <h5>Figure 13</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+<h5>9 - Configuration Panel and help</h5>
+<hr />
+<p>
+    The DoMosaics settings are available by clicking on the cog-wheel icon
+    in the button bar. Here, you can define which email is to be used for scans,
+    default binaries and models for local HMMER scans, set up URLS which are used
+    for contextual look-up operations, define your workspace and set up default
+    options for closing and saving etc (see Figure 14).
+</p>
+<div class='thumbnail'>
+    <img src="img/qs/fig14.png">
+    <div class='caption'>
+        <h5>Figure 14</h5>
+    </div>
+</div>
+<br />
+<br />
+
+<h5>10 - Store the days work and continue later</h5>
+<hr />
+<p>
+    When you close DoMosaics it will store all of your projects. When you load DoMosaics,
+    it will restore the state it had last.
+    You can save projects and views in DoMosaics format (xml-based), or export your datasets
+    to fasta, xdom or newick via the file menu of each view.
+</p>
+
+</div>
+
+
+
+</body>
+</html>
